@@ -65,6 +65,6 @@ const init = () => {
 
 
 window.addEventListener("load", () =>{
-    root.appendChild(home());
+    history.pushState({},"","/")
     init();
 })
