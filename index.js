@@ -17,27 +17,52 @@ const root = document.querySelector("#root")
 // const init = () => {
 //     window.addEventListener("hashchange", () => console.log(window.location.hash))
 // }
+const homebtn = document.querySelector("#home")
+const brigadeirobtn = document.querySelector("#brigadeiro")
+const cupcakebtn = document.querySelector("#cupcake")
+const docesbtn = document.querySelector("#doces")
 
+homebtn.addEventListener("click", function(){
+    history.pushState({},"","/")
+    init();
+})
+
+brigadeirobtn.addEventListener("click", function(){
+    history.pushState({},"","/brigadeiro")
+    init();
+})
+
+cupcakebtn.addEventListener("click", function(){
+    history.pushState({},"","/cupcake")
+    init();
+})
+
+docesbtn.addEventListener("click", function(){
+    history.pushState({},"","/doces")
+    init();
+})
 
 const init = () => {
-    window.addEventListener("hashchange", () => {
+    console.log(window.location.pathname)
+        console.log("teste")
         root.innerHTML = "";
-        switch(window.location.hash){
-            case "":
+        switch(window.location.pathname){
+            case "/":
                 root.appendChild(home());
                 break;
-            case "#brigadeiro":
+            case "/brigadeiro":
+                console.log("teste")
                 root.appendChild(brigadeiro())
                 break;
-            case "#cupcake":
+            case "/cupcake":
                 root.appendChild(cupcake())
                 break; 
-            case "#doces":
+            case "/doces":
                 root.appendChild(doces())
                 break;
         }
-    })
 }
+
 
 window.addEventListener("load", () =>{
     root.appendChild(home());

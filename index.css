@@ -41,6 +41,7 @@ header {
      text-decoration: none;
      padding: 50px;
      font-size: 18px;
+     cursor: pointer;
  }
 
  #menu a {
